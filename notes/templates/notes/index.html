@@ -11,7 +11,7 @@
   <form class="form-card" method="post">
     {% csrf_token %}
     
-    <input type="hidden" value='None' name='ID'>
+    <input type="hidden" value='' name='id'>
     <input id="titulo" class="form-card-title" type="text" name="titulo" placeholder="Título"/>
     <input id="detalhes" class="form-card-details" name="detalhes" type="text" placeholder="Detalhes"/>
     <button name="button" class="btn" type="submit">Criar</button>
@@ -24,26 +24,29 @@
     <div class="card">
       <!-------------- botão editar --------------->
 
-      <a class="edit-content">
+      <a class="edit-content" onclick="editCard('{{note.id}}')">
         <img class="img_edit" src="{% static 'notes/img/pencil.png' %}" alt="Botão de Editar">
       </a>
 
       <!-------------- botão excluir --------------->
-      <a class="close-container">
-        <div class="leftright"></div>
-        <div class="rightleft"></div>
-        <label class="close">Delete</label>
-      </a>
+        <a class="close-container" onclick="deleteCard('{{note.id}}')">
+          <div class="leftright"></div>
+          <div class="rightleft"></div>
+          <label class="close">Delete</label>
+        </a>
+
+      <form name="deleteCard-{{note.id}}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{note.id}}" /> 
+      </form>
+      
 
       <!-------------- conteúdo --------------->
-      <h3 class="card-title" name="title{id}">{{ note.title }}</h3>
+      <h3 class="card-title" name="title-{{note.id}}">{{note.title}}</h3>
       <div class="card-content">
-        <p name="content{id}">{{note.content}}</p>
+        <p name="content-{{note.id}}">{{note.content}}</p>
       </div>
 
-      <form name="deleteCard{id}" method="post">
-        <input type="hidden" name="deleteNote" value="{id}" /> 
-      </form>
 
     </div>
     {% endfor %}

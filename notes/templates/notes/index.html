@@ -2,25 +2,53 @@
 {% load static %}
 
 {% block content %}
-<img src="{% static 'notes/img/logo-getit.png' %}" />
-<p>Como o Post-it, mas com outro verbo</p>
+<div class="appbar">
+  <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
 
-<form method="post">
-  {% csrf_token %}
-  <label for="titulo">Título</label>
-  <input id="titulo" type="text" name="titulo" />
-  <label for="detalhes">Detalhes</label>
-  <textarea id="detalhes" name="detalhes"></textarea>
-  <input type="submit" />
-</form>
+<main class="container">
+  <form class="form-card" method="post">
+    {% csrf_token %}
+    
+    <input type="hidden" value='None' name='ID'>
+    <input id="titulo" class="form-card-title" type="text" name="titulo" placeholder="Título"/>
+    <input id="detalhes" class="form-card-details" name="detalhes" type="text" placeholder="Detalhes"/>
+    <button name="button" class="btn" type="submit">Criar</button>
 
-<ul>
-  {% for note in notes %}
-  <h3>{{ note.title }}</h3>
-  <div class="card-content">
-    <p name="content{id}">{{note.content}}</p>
+  </form>
+
+  <div class="card-container">
+    <!-------------- cartões --------------->
+    {% for note in notes %}
+    <div class="card">
+      <!-------------- botão editar --------------->
+
+      <a class="edit-content">
+        <img class="img_edit" src="{% static 'notes/img/pencil.png' %}" alt="Botão de Editar">
+      </a>
+
+      <!-------------- botão excluir --------------->
+      <a class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+        <label class="close">Delete</label>
+      </a>
+
+      <!-------------- conteúdo --------------->
+      <h3 class="card-title" name="title{id}">{{ note.title }}</h3>
+      <div class="card-content">
+        <p name="content{id}">{{note.content}}</p>
+      </div>
+
+      <form name="deleteCard{id}" method="post">
+        <input type="hidden" name="deleteNote" value="{id}" /> 
+      </form>
+
+    </div>
+    {% endfor %}
+    <!------------- fim cartões ------------->
   </div>
-  {% endfor %}
 
-</ul>
+</main>
 {% endblock %}

@@ -144,16 +144,19 @@ body {
   border: none;
 }
 
+
 .card-tag{
   position: relative;
+  left: 5%; 
+  top: 5%;
+}
+.card-tag-text{
   font-family: 'Permanent Marker', cursive;
   color: black;
   opacity: 50%;
   font-size: 1rem;
-  left: 5%; 
-  top: 5%;
 }
-.card-tag:hover{
+.card-tag-text:hover{
   opacity: 100%;
 }
 

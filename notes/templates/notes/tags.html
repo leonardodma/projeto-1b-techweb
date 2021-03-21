@@ -3,32 +3,14 @@
 
 {% block content %}
 <main class="container">
-  <form class="form-card" method="post">
-    {% csrf_token %}
-    
-    <input type="hidden" value='' name='id'>
-    <input id="titulo" class="form-card-title" type="text" name="titulo" placeholder="Título"/>
-    <input id="detalhes" class="form-card-details" name="detalhes" type="text" placeholder="Detalhes"/>
-    <input id="tag" class="form-card-tag" name="tag" type="text" placeholder="Tag"/>
-    <button name="button" class="btn" type="submit">Criar</button>
-
-  </form>
-
+  
   <div class="card-container">
-    <!-------------- cartões --------------->
+    <!------------------- cartões -------------------->
     {% for note in notes %}
     <div class="card">
-      <!-------------- tag redicionadora --------------->
-      <a class="card-tag" name="{{note.tag}}" onclick="gotoTag('{{note.tag}}')">
-        <p class="card-tag-text" name="tag-{{note.id}}">{{note.tag}}</p>
-      </a>
-      
-      <form name="gotoTag-{{note.tag}}" method="post">
-        {% csrf_token %}
-        <input type="hidden" name="tag" value="{{note.tag}}" /> 
-      </form>
-
       <!-------------- botão editar --------------->
+      <p class="card-tag" name="tag-{{note.id}}">{{note.tag}}</p>
+
       <a class="edit-content" onclick="editCard('{{note.id}}')">
         <img class="img_edit" src="{% static 'notes/img/pencil.png' %}" alt="Botão de Editar">
       </a>
@@ -43,14 +25,13 @@
       <form name="deleteCard-{{note.id}}" method="post">
         {% csrf_token %}
         <input type="hidden" name="id" value="{{note.id}}" /> 
-      </form>      
-
+      </form>
+      
       <!-------------- conteúdo --------------->
       <h3 class="card-title" name="title-{{note.id}}">{{note.title}}</h3>
       <div class="card-content">
         <p name="content-{{note.id}}">{{note.content}}</p>
       </div>
-
 
     </div>
     {% endfor %}

@@ -28,8 +28,21 @@ def index(request):
             Note(title=title, content=content, tag=tag).save()
             
         else:
-            if title == None:
+            if tag == None:
                 Note.objects.filter(id=ID).delete()
+
+            elif ID == None:
+                all_notes = Note.objects.all()
+                tag_notes = []
+
+                for note in all_notes:
+                    if note.tag == tag:
+                        tag_notes.append(note)
+                
+                print(tag_notes)
+
+                return render(request, 'notes/tags.html', {'notes': tag_notes})
+
             else:
                 note = Note.objects.get(id=ID)
                 note.title = title
@@ -43,3 +56,8 @@ def index(request):
     else:
         all_notes = Note.objects.all()
         return render(request, 'notes/index.html', {'notes': all_notes})
+    
+"""
+def tags(request, notes):
+    return render(request, 'notes/tags.html', {'notes': notes})
+"""

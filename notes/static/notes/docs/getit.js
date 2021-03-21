@@ -17,6 +17,11 @@ function editCard(id) {
 	document.getElementsByName('detalhes')[0].value = document.getElementsByName('content-' + id)[0].innerText
 }
 
+function gotoTag(tag) {
+  // Mandar enviar o form com nome deleteCard{id}
+  console.log(tag)
+	document.getElementsByName('gotoTag-' + tag)[0].submit()
+}
 
 // Código do botão de Editar
 

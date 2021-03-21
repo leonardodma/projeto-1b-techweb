@@ -11,12 +11,21 @@ def index(request):
         title = request.POST.get('titulo')
         content = request.POST.get('detalhes')
 
+        if request.POST.get('tag') == None:
+            tag = request.POST.get('tag')
+        else:
+            if request.POST.get('tag')[0] == '#':
+                tag = request.POST.get('tag')
+            else:
+                tag = '#'+request.POST.get('tag')
+
         print(f'id = {ID}')
         print(f'título = {title}')
         print(f'content = {content}')
+        print(f'tag = {tag}')
 
         if ID == '':
-            Note(title=title, content=content).save()
+            Note(title=title, content=content, tag=tag).save()
             
         else:
             if title == None:
@@ -25,6 +34,7 @@ def index(request):
                 note = Note.objects.get(id=ID)
                 note.title = title
                 note.content = content
+                note.tag = tag
                 note.save()
 
         

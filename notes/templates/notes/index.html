@@ -14,6 +14,7 @@
     <input type="hidden" value='' name='id'>
     <input id="titulo" class="form-card-title" type="text" name="titulo" placeholder="Título"/>
     <input id="detalhes" class="form-card-details" name="detalhes" type="text" placeholder="Detalhes"/>
+    <input id="tag" class="form-card-tag" name="tag" type="text" placeholder="Tag"/>
     <button name="button" class="btn" type="submit">Criar</button>
 
   </form>
@@ -23,6 +24,7 @@
     {% for note in notes %}
     <div class="card">
       <!-------------- botão editar --------------->
+      <p class="card-tag" name="tag-{{note.id}}">{{note.tag}}</p>
 
       <a class="edit-content" onclick="editCard('{{note.id}}')">
         <img class="img_edit" src="{% static 'notes/img/pencil.png' %}" alt="Botão de Editar">

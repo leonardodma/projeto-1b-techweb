@@ -28,7 +28,7 @@ Algumas informações úteis e dicas:
 html,
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #EFE2BA;
+  background-color: #162039;
 }
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
@@ -36,7 +36,7 @@ body {
 
 
 .appbar {
-	background-color: #D79922;	
+	background-color: #588cef;	
 	display: flex;
 	flex-direction: row;
 	align-content: center;
@@ -90,6 +90,13 @@ body {
   border:none;
 }
 
+.form-card-tag{
+  font-family: 'Roboto', sans-serif;
+  font-size: auto;
+  margin: 1rem;
+  border:none;
+}
+
 .btn {
   position: relative;
   display: block;
@@ -102,7 +109,7 @@ body {
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(32, 32, 32, 0.75);
 
-  background-color: #D79922;
+  background-color: #588cef;
 
   transition: background-color 0.3s;
 
@@ -137,18 +144,35 @@ body {
   border: none;
 }
 
+.card-tag{
+  position: relative;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  opacity: 50%;
+  font-size: 1rem;
+  left: 5%; 
+  top: 5%;
+}
+.card-tag:hover{
+  opacity: 100%;
+}
+
 .card-title {
+  position: relative;
   font-family: 'Permanent Marker', cursive;
   font-weight: bold;
   font-size: 1rem;
-  margin-left: 0.4rem;
+  left: 5%;
+  bottom: 30%;
 }
 
 .card-content {
+  position: relative;
   font-family: 'Permanent Marker', cursive;
   font-size: 0.75rem;
   align-self:center;
   margin: 0.1rem;
+  bottom: 20%;
 } 
 
 
@@ -156,7 +180,7 @@ body {
 .close-container{
   position: relative;
   left: 85%;
-  bottom: 30%;
+  bottom: 40%;
   width: 50px;
   cursor: pointer;
 }
@@ -200,11 +224,11 @@ body {
 
 .close-container:hover .leftright{
   transform: rotate(-45deg);
-  background-color: #F25C66;
+  background-color: #9c2129;
 }
 .close-container:hover .rightleft{
   transform: rotate(45deg);
-  background-color: #F25C66;
+  background-color: #9c2129;
 }
 .close-container:hover label{
   opacity: 1;
@@ -215,16 +239,17 @@ body {
 .edit-content{
   position: relative;
   left: 70%;
-  bottom: 5%;
+  bottom: 16%;
 }
 
 .img_edit{
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.4rem;
+  width: 1.4rem;
+  opacity: 0.3;
 }
 
 .img_edit:hover{
-  background: #EFE2BA;
+  opacity: 1;
 }
 
 /* -----------------------------------------------------------------------------------------------*/
@@ -268,64 +293,64 @@ body {
 
 
 .card-rotation-1  {
-  background-color: #C5CBE3;
+  background-color: #bb86fc;
   transform: rotate(3deg);
   
 }
 .card-rotation-2  {
-  background-color: #F13C20;
+  background-color: #434bb3;
   transform: rotate(6deg);
 }
 .card-rotation-3  {
-  background-color: #F13C20;
+  background-color: #68dbc7;
   transform: rotate(9deg);
 }
 .card-rotation-4  {
-  background-color: #C5CBE3;
+  background-color: #ea527e;
   transform: rotate(-3deg);
 }
 
 .card-rotation-5  {
-  background-color: #F13C20;
+  background-color: #bb86fc;
   transform: rotate(-6deg);
 }
 .card-rotation-6  {
-  background-color:  #4056A1;
+  background-color:  #434bb3;
   transform: rotate(-9deg);
 }
 .card-rotation-7  {
-  background-color: #4056A1;
+  background-color: #68dbc7;
   transform: rotate(3deg);
 }
 .card-rotation-8  {
-  background-color:  #4056A1;
+  background-color:  #ea527e;
   transform: rotate(6deg);
 }
 .card-rotation-9  {
-  background-color: #F13C20;
+  background-color: #bb86fc;
   transform: rotate(9deg);
 }
 .card-rotation-10 {
-  background-color: #4056A1;
+  background-color: #434bb3;
   transform: rotate(-3deg);
 }
 .card-rotation-11 {
-  background-color: #C5CBE3;
+  background-color: #68dbc7;
   transform: rotate(-6deg);
 }
 .card-rotation-12 {
-  background-color: #C5CBE3;
+  background-color: #ea527e;
   transform: rotate(-9deg);
 }
 .card-rotation-13 {
-  background-color: #F13C20;
+  background-color: #bb86fc;
   transform: rotate(3deg);
 }
 .card-rotation-14 {
-  background-color: #C5CBE3;
+  background-color: #434bb3;
   transform: rotate(6deg);
 }
 .card-rotation-15 {
-  background-color: #F13C20;
+  background-color: #68dbc7;
   transform: rotate(9deg);
 }

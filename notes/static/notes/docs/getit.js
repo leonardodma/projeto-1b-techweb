@@ -12,6 +12,7 @@ function editCard(id) {
 
   // Mandar um Post com o ID do Cartão que o usuário clicou para editar.
   document.getElementsByName('id')[0].value = id
+  document.getElementsByName('tag')[0].value = document.getElementsByName('tag-' + id)[0].innerText
   document.getElementsByName('titulo')[0].value = document.getElementsByName('title-' + id)[0].innerText
 	document.getElementsByName('detalhes')[0].value = document.getElementsByName('content-' + id)[0].innerText
 }

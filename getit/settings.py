@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'bim)jswga_%6+y&p*ssn-*5ex@z8kff1&(kxr!e=9#v&5=avd^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'FALSE'
 
-ALLOWED_HOSTS = ['lit-fjord-17999.herokuapp.com/', 'localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = ['lit-fjord-17999.herokuapp.com', 'localhost', '127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition

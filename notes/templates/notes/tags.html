@@ -8,15 +8,10 @@
     <!------------------- cartões -------------------->
     {% for note in notes %}
     <div class="card">
-      <!-------------- botão editar --------------->
-      <p class="card-tag" name="tag-{{note.id}}">{{note.tag}}</p>
-
-      <a class="edit-content" onclick="editCard('{{note.id}}')">
-        <img class="img_edit" src="{% static 'notes/img/pencil.png' %}" alt="Botão de Editar">
-      </a>
+      <p class="card-tag-tags" name="tag-{{note.id}}">{{note.tag}}</p>
 
       <!-------------- botão excluir --------------->
-        <a class="close-container" onclick="deleteCard('{{note.id}}')">
+        <a class="close-container-tags" onclick="deleteCard('{{note.id}}')">
           <div class="leftright"></div>
           <div class="rightleft"></div>
           <label class="close">Delete</label>

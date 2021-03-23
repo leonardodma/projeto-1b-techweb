@@ -15,9 +15,9 @@ def index(request):
             tag = request.POST.get('tag')
         else:
             if request.POST.get('tag')[0] == '#':
-                tag = request.POST.get('tag')
+                tag = request.POST.get('tag').lower()
             else:
-                tag = '#'+request.POST.get('tag')
+                tag = '#'+request.POST.get('tag').lower()
 
         print(f'id = {ID}')
         print(f'título = {title}')
@@ -41,7 +41,7 @@ def index(request):
                 
                 print(tag_notes)
 
-                return render(request, 'notes/tags.html', {'notes': tag_notes})
+                return tags(request, tag_notes)
 
             else:
                 note = Note.objects.get(id=ID)
@@ -57,7 +57,7 @@ def index(request):
         all_notes = Note.objects.all()
         return render(request, 'notes/index.html', {'notes': all_notes})
     
-"""
+
 def tags(request, notes):
     return render(request, 'notes/tags.html', {'notes': notes})
-"""
+

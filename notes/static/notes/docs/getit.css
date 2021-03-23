@@ -144,18 +144,30 @@ body {
   border: none;
 }
 
-
 .card-tag{
   position: relative;
   left: 5%; 
-  top: 5%;
+  top: 2%;
+  cursor: pointer;
 }
+
+/*  Para o arquivo de tags*/
+.card-tag-tags{
+  position: relative;
+  left: 5%; 
+  top: -3%;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  font-size: 1rem;
+}
+
 .card-tag-text{
   font-family: 'Permanent Marker', cursive;
   color: black;
   opacity: 50%;
   font-size: 1rem;
 }
+
 .card-tag-text:hover{
   opacity: 100%;
 }
@@ -178,12 +190,19 @@ body {
   bottom: 20%;
 } 
 
-
 /* --------------------------------------Botão de Excluir--------------------------------------*/
 .close-container{
   position: relative;
   left: 85%;
-  bottom: 40%;
+  bottom: 45%;
+  width: 50px;
+  cursor: pointer;
+}
+/*  Para o arquivo de tags*/
+.close-container-tags{
+  position: relative;
+  left: 85%;
+  bottom: 25%;
   width: 50px;
   cursor: pointer;
 }
@@ -242,17 +261,20 @@ body {
 .edit-content{
   position: relative;
   left: 70%;
-  bottom: 16%;
+  bottom: 22%;
+  cursor: pointer;
 }
 
 .img_edit{
   height: 1.4rem;
   width: 1.4rem;
   opacity: 0.3;
+  cursor: pointer;
 }
 
 .img_edit:hover{
   opacity: 1;
+  cursor: pointer;
 }
 
 /* -----------------------------------------------------------------------------------------------*/

@@ -50,7 +50,7 @@ def index(request):
                 note.tag = tag
                 note.save()
 
-        
+            
         return redirect('index')
 
     else:

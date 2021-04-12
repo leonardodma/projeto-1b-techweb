@@ -83,7 +83,6 @@ def index(request):
                 note.content = content
                 note.tag = tag
                 note.save()
-
             
         return redirect('index')
 

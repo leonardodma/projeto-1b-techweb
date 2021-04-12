@@ -28,7 +28,7 @@ SECRET_KEY = 'bim)jswga_%6+y&p*ssn-*5ex@z8kff1&(kxr!e=9#v&5=avd^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'FALSE'
 
-ALLOWED_HOSTS = ['still-cove-69163.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['lit-fjord-17999.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition

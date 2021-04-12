@@ -6,18 +6,12 @@
     <div class="wrapper">
       <h1>Lista de Tags</h1>
         <ol >
-          {% for note in notes %}
+          {% for tag in tags %}
           <li>
-            <a onclick="redirectTag()">{{note.tag}}</a>
+            <a href="{% url 'tags' tag_=tag %}">{{tag}}</a>
           </li>
-        
-          <form name="tag_redirect" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="redirect_tag" value="{{note.tag}}" /> 
-          </form> 
           {% endfor %}
         </ol>
-
     </div>  
 </main>
 {% endblock %}

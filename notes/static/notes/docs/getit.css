@@ -24,6 +24,7 @@ Algumas informações úteis e dicas:
 
  @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 
+ 
 
 html,
 body {
@@ -54,6 +55,12 @@ body {
   margin-left: 0.5rem;
   font-size: 12px;
 }
+
+.container_list_button{
+  margin: auto;
+  display:block;
+}
+
 
 .form-card{
   display:flex;
@@ -378,4 +385,57 @@ body {
 .card-rotation-15 {
   background-color: #68dbc7;
   transform: rotate(9deg);
+}
+
+/* -----------------------------------------------------------------------------------------------*/
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+.cf:before,  
+.cf:after {  
+    content: " ";  
+    display: table;  
+}  
+.cf:after {  
+    clear: both;  
+}  
+.cf {  
+    *zoom: 1;  
+}
+
+.wrapper {
+  width:600px;
+  margin:2rem auto;
+  background:#fff;
+  padding:2em;
+}
+
+ol {
+  counter-reset: my-counter;
+  list-style-type: upper-latin;
+}
+
+ol ol {
+  margin-left:0.9em;
+}
+
+ol li {
+  counter-increment: my-counter;
+  line-height:1.5;
+  font-family: 'Permanent Marker', cursive;
+  opacity: 50%;
+}
+ol li:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+h1 {
+  font-family:"Fjalla One", sans-serif;
+  font-size:2em;
+  text-transform:uppercase;
+  font-weight:400;
+  color: #68dbc7;
+  border-bottom:1px solid#68dbc7;
+  margin-bottom:1em;
 }

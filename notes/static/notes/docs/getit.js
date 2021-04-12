@@ -23,6 +23,11 @@ function gotoTag(tag) {
 	document.getElementsByName('gotoTag-' + tag)[0].submit()
 }
 
+function redirectTag() {
+  // Mandar enviar o form com nome deleteCard{id}
+	document.getElementsByName('tag_redirect')[0].submit()
+}
+
 // Código do botão de Editar
 
 

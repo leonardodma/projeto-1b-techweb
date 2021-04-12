@@ -28,7 +28,7 @@ SECRET_KEY = 'bim)jswga_%6+y&p*ssn-*5ex@z8kff1&(kxr!e=9#v&5=avd^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'FALSE'
 
-ALLOWED_HOSTS = ['lit-fjord-17999.herokuapp.com', 'localhost', '127.0.0.1', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['still-cove-69163.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'getit.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://localhost/getit?user=getituser&password=getitsenha',
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
 
 
 # Password validation

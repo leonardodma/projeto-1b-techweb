@@ -1,5 +1,9 @@
 from django.db import models
 
+# python manage.py makemigrations
+# python manage.py migrate
+
+
 # Create your models here.
 class Note(models.Model):
     title = models.CharField(max_length=200)
